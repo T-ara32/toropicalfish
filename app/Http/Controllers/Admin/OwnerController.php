@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Owner;
+use Illuminate\Support\Facades\DB;
 
 class OwnerController extends Controller
 {
@@ -12,11 +14,7 @@ class OwnerController extends Controller
     {
         $this->middleware('auth:admin');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         dd('owner');
