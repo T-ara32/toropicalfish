@@ -17,7 +17,9 @@ class OwnerController extends Controller
 
     public function index()
     {
-        dd('owner');
+        $owners = Owner::select('name', 'email', 'created_at')->get();
+
+        return view('admin.owners.index', compact('owners'));
     }
 
     /**
