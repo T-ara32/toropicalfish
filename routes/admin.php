@@ -22,12 +22,12 @@ use App\Http\Controllers\Admin\OwnerController;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.welcome');
-});
+// Route::get('/', function () {
+//     return view('admin.welcome');
+// });
 
 Route::resource('owners', OwnerController::class)
-->middleware('auth:admin');
+->middleware('auth:admin')->except(['show']);
 
 Route::prefix('expired-owners')->middleware('auth:admin')->group(function(){
     Route::get('index', [OwnerController::class, 'expiredOwnerIndex'])->name('expired-owners.index');
