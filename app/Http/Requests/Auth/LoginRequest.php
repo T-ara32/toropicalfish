@@ -45,7 +45,7 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
         // requestクラスのrouteIsが使える
-        if($this->routeIs('owners.*')){
+        if($this->routeIs('owner.*')){
             // ownerのログインフォームからきたらownerを設定
             $guard = 'owners';
         } elseif ($this->routeIs('admin.*')){
